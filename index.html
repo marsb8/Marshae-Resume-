@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marshae Bryant — Résumé</title>
+  <!-- Futuristic, professional font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #000000;              /* black background */
+      --ink: #f3f3f3;             /* light text */
+      --muted: #a0a0a0;           /* muted text */
+      --accent1: #00f5d4;         /* aqua */
+      --accent2: #ff0266;         /* magenta */
+      --accent3: #3d5afe;         /* blue */
+      --line: #222;
+      --card: #111;
+      --shadow: 0 0 18px rgba(0,255,180,.25);
+      --chip-bg: #1a1a1a;
+      --radius-lg: 14px;
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, sans-serif;
+      color:var(--ink);
+      background: var(--bg);
+    }
+    .page{ max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+
+    /* Header */
+    .header{
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      display: grid; grid-template-columns: 1fr auto; gap: 20px;
+    }
+    .name{ font-family:"Orbitron", sans-serif; font-size: clamp(28px, 3vw, 42px); font-weight: 800; color: var(--accent1); text-transform: uppercase; }
+    .role{ font-size: 18px; color: var(--accent3); margin-top: 6px; font-weight: 600; }
+    .contact{ display:flex; flex-wrap:wrap; gap: 12px 18px; margin-top: 14px; }
+    .contact a{ color: var(--accent2); text-decoration: none; font-weight: 600; }
+    .cta{ align-self: start; display:flex; gap:12px; }
+    .btn{
+      border:1px solid var(--accent1); background: transparent;
+      color: var(--accent1); padding: 10px 14px; border-radius: 8px;
+      font-family: "Orbitron", sans-serif; font-weight:600; cursor:pointer;
+      transition: all .2s ease;
+    }
+    .btn.primary{ background: linear-gradient(135deg, var(--accent1), var(--accent2)); color:#000; }
+    .btn:hover{ transform: translateY(-2px) scale(1.02); box-shadow: 0 0 12px var(--accent1); }
+
+    /* Tech lines motif */
+    .header::after{
+      content:""; position:absolute; inset:0; background: linear-gradient(135deg, transparent 60%, rgba(0,245,212,.08) 100%);
+      pointer-events:none;
+    }
+
+    .grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 24px; }
+    @media(max-width:860px){ .grid{ grid-template-columns:1fr; } }
+
+    .card{ background: var(--card); border:1px solid var(--line); border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow); }
+    .card h2{ font-family:"Orbitron", sans-serif; color: var(--accent2); font-size: 18px; margin:0 0 12px; text-transform: uppercase; letter-spacing: 1px; }
+
+    .item{ display:grid; grid-template-columns: 1fr auto; gap:8px 12px; padding: 14px 0; border-bottom:1px dashed #333; }
+    .item:last-child{ border-bottom:0; }
+    .item .title{ font-weight:700; color: var(--accent1); }
+    .item .org{ color: var(--muted); }
+    .item .dates{ color: var(--accent3); font-weight:600; }
+    .bullets{ margin: 6px 0; padding-left: 20px; }
+    .bullets li{ margin: 6px 0; }
+
+    .chips{ display:flex; flex-wrap:wrap; gap: 10px; }
+    .chip{ background: var(--chip-bg); border: 1px solid #333; padding: 6px 10px; border-radius: 999px; font-weight: 600; font-size: 13px; color: var(--accent1); }
+
+    .foot{ text-align:center; font-size:12px; color: var(--muted); margin: 20px 0 40px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div>
+        <h1 class="name">Marshae Bryant</h1>
+        <p class="role">Cloud Security Engineer Candidate</p>
+        <p class="contact">
+          <a href="mailto:bryantmarshae8@gmail.com">bryantmarshae8@gmail.com</a>
+          <a href="tel:+16143269342">(614) 326‑9342</a>
+          <a href="https://www.linkedin.com/in/marshae-bryant/" target="_blank">LinkedIn</a>
+        </p>
+      </div>
+      <div class="cta">
+        <button class="btn primary" onclick="window.print()">Print / Save PDF</button>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <h2>Summary</h2>
+        <p>Proactive cloud security fellow with expertise in AWS, networking, and incident response. Experienced building secure cloud labs and client advocacy, blending technical depth with strong communication. Passionate about protecting organizations against evolving threats while delivering clear value to stakeholders.</p>
+      </section>
+
+      <aside class="card">
+        <h2>Skills</h2>
+        <div class="chips">
+          <span class="chip">AWS (IAM, EC2, S3)</span>
+          <span class="chip">IDS/IPS · Snort</span>
+          <span class="chip">Terraform</span>
+          <span class="chip">SIEM · Splunk</span>
+          <span class="chip">Networking · VPC</span>
+          <span class="chip">Incident Response</span>
+          <span class="chip">Pentesting Tools</span>
+          <span class="chip">Customer Advocacy</span>
+        </div>
+      </aside>
+
+      <section class="card" style="grid-column:1 / -1;">
+        <h2>Experience</h2>
+        <div class="item">
+          <div>
+            <div class="title">Client Relations Advocate</div>
+            <div class="org">Family Medical Care Plan</div>
+            <ul class="bullets">
+              <li>Managed escalated cases, ensuring timely resolution and compliance.</li>
+              <li>Analyzed patient data using enterprise systems to deliver accurate solutions.</li>
+              <li>Coordinated with stakeholders to streamline processes and outcomes.</li>
+            </ul>
+          </div>
+          <div class="dates">2024 — Present</div>
+        </div>
+
+        <div class="item">
+          <div>
+            <div class="title">IT Support Intern</div>
+            <div class="org">Mentor Me Collective</div>
+            <ul class="bullets">
+              <li>Built ticketing system for troubleshooting and audit tracking.</li>
+              <li>Conducted IT control testing and compliance reviews.</li>
+            </ul>
+          </div>
+          <div class="dates">2024 — 2025</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Education</h2>
+        <div class="item">
+          <div>
+            <div class="title">Cybersecurity Fellowship</div>
+            <div class="org">The Knowledge House</div>
+          </div>
+          <div class="dates">2025 — Present</div>
+        </div>
+        <div class="item">
+          <div>
+            <div class="title">B.S. Technology</div>
+            <div class="org">Bowling Green State University</div>
+          </div>
+          <div class="dates">2018</div>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2>Certifications</h2>
+        <ul class="bullets">
+          <li>Coursera — Cybersecurity Certificate (2024)</li>
+          <li>Certified Scrum Master (2022)</li>
+          <li>CompTIA Security+ (in progress)</li>
+        </ul>
+      </aside>
+    </main>
+
+    <p class="foot">Enable background graphics when printing to preserve the dark theme and neon highlights.</p>
+  </div>
+</body>
+</html>
